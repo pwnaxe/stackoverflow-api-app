@@ -47,8 +47,12 @@ export default function DataTable() {
       <div style={{ height: '60vh', marginLeft: '5rem', marginRight: '5rem', pt: '5rem', backgroundColor: '#fff', color: 'black' }}>
         <DataGrid
           checkboxSelection
-          pageSize={20}
-          rowsPerPageOptions={[5, 10, 20, 30, 40, 50, 100]}
+          initialState={{
+            pagination: {
+              paginationModel: { page: 0, pageSize: 5 },
+            },
+          }}
+          pageSizeOptions={[5, 10, 20, 50, 100]}
           rows={rows}
           columns={columns}
         />
