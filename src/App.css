@@ -1,14 +1,14 @@
-* {
+body {
   max-width: 100vw;
   max-height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: linear-gradient(-45deg, #2f3853, #06214d, #073585, #1a54a0);
+  background: linear-gradient(-45deg, #616161, #626364, #6981a7, #93a3b9);
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
-  color: #ffffff;
   text-align: center;
+  color: #fff;
 }
 
 @keyframes gradient {
@@ -30,13 +30,8 @@
 
 .footer {
   position: fixed;
-  left: 0;
   bottom: 0;
   width: 100%;
   background-color: #333;
   color: white;
-  text-align: center;
-}
-.footer h3 {
-  margin-left: 5rem;
 }

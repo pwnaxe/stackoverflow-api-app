@@ -12,6 +12,5 @@ export const fetchTags = async (page, pageSize, order, sort) => {
       sort,
     },
   });
-
   return response.data;
 };
