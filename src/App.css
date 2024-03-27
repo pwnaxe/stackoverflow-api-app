@@ -35,3 +35,15 @@ body {
   background-color: #333;
   color: white;
 }
+
+.css-rtrcn9-MuiTablePagination-root:last-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media (max-width: 800px) {
+  .css-rtrcn9-MuiTablePagination-root:last-child {
+    position: relative;
+  }
+}

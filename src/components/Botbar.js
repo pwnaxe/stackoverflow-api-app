@@ -1,9 +1,10 @@
 import React from 'react';
 
-export default function Botbar() {
+const Botbar = () => {
   return (
     < div className='footer'>
       <h3>Jarosław Karpiński © 2024 -- Miłego dnia!</h3>
     </div >
-  );
-}
+  )
+};
+export default Botbar;

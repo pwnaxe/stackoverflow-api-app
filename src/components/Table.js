@@ -3,6 +3,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { useQuery } from 'react-query';
 import { fetchTags } from '../utilities/fetchtags';
 import Button from '@mui/material/Button';
+import Loading from './Loading';
 
 
 const columns = [
@@ -15,8 +16,8 @@ export default function DataTable() {
   const [fetchEnabled, setFetchEnabled] = React.useState(false);
 
   const { isLoading, error, data, refetch } = useQuery(
-    ['fetchTags', 'desc', 'popular'],
-    () => fetchTags('desc', 'popular'),
+    ['fetchTags', 1, 100, 'desc', 'popular'],
+    () => fetchTags(1, 100, 'desc', 'popular'),
     {
       enabled: fetchEnabled,
       retry: false,
@@ -29,7 +30,7 @@ export default function DataTable() {
     refetch();
   };
 
-  if (isLoading) return <>Loading...</>;
+  if (isLoading) return <Loading />;
   if (error) return <>Error occurred: {error.message}</>;
 
   const rows = data?.items.map((item, index) => ({
@@ -49,7 +50,7 @@ export default function DataTable() {
           checkboxSelection
           initialState={{
             pagination: {
-              paginationModel: { page: 0, pageSize: 5 },
+              paginationModel: { page: 0, pageSize: 10 },
             },
           }}
           pageSizeOptions={[5, 10, 20, 50, 100]}
